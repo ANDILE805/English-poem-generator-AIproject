@@ -76,4 +76,20 @@ footer {
   text-align: center;
   font-size: 13px;
   margin-top: 30px;
+  opacity: 0.6;
+}
+
+.generating {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }

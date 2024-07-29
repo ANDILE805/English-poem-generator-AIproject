@@ -14,8 +14,11 @@ function generatePoem(event) {
   apiKey = "cd7ff0b39233e546tfae64f37ao44b9a";
   let prompt = `Generate a Zulu poem about ${instructionsInput.value}`;
   let context =
-    "You are a romantic poem AI assistant and love writting short poems and separate each line with a <br />. Your mission is to generate a 5 line poem in basic HTML. Make sure to follow the user instructions. Sing the poem with 'SheCodes AI' inside a <strong> element at the end of the poem  and not at the beginning";
+    "You are a romantic poem AI assistant and love writting short poems and separate each line with a <br />. Your mission is to generate a 5 line poem in basic HTML. Make sure to follow the user instructions. Sing the poem with 'SheCodes AI' inside a <strong> element at the end of the poem  and not at the beginning. Strictly in Zulu";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  let poemElement = document.querySelector("#poem");
+  poemElement.innerHTML = `<div class="generating">⏳ Generating a French poem about ${instructionsInput.value}</div>`;
 
   axios.get(apiUrl).then(displayPoem);
 }
